@@ -1,0 +1,48 @@
+{% extends 'hms_dashboard.html' %}
+{% block content %}
+<div class="main-content">
+    <div class="container">
+        <div class="patient-datails-outer">
+            <div class="patient-datails-inner">
+                <h2>Doctor Details</h2>
+                <a href="docor_add" class="add-patient" id="add">Add Doctor</a>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Doctor Id</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Specility</th>
+                            <th>Password</th>
+                            <th>Joining Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in doctors %}
+                        <tr>
+                            <td data-label="Id">{{i.id}}</td>
+                            <td data-label="Doctor Id">{{i.Doctor_id}}</td>
+                            <td data-label="Name">{{i.Name}}</td>
+                            <td data-label="Phone">{{i.Phone}}</td>
+                            <td data-label="Specility">{{i.Specility}}</td>
+                            <td data-label="Password">{{i.Password}}</td>
+                            <td data-label="Joining Date">{{i.Joining_date}}</td>
+                            <td data-label="Actions" class="edit-delete-btn">
+                                <a href="{% url 'update_doctor' i.id %}" class="edit">
+                                    <i class='bx bxs-edit-alt edit-btn'></i>
+                                </a>
+                                <a href="{% url 'delete_doctor' i.id %}" class="trash">
+                                    <i class='bx bxs-trash-alt delete-btn'></i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

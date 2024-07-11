@@ -1,0 +1,47 @@
+{% extends 'profile.html' %}
+
+{% block content %}
+<div class="profile-dashboard">
+    <div class="inner-container">
+        {% for i in user %}
+        <div class="profile-container">
+            <div class="profile-sidebar">
+                <img src={{i.Image.url}} alt="Profile Picture" class="profile-pic">
+                <a href="{% url 'profile_update' i.id %}" class="btn update-btn">
+                    Update
+                </a>
+                <button class="btn delete-btn">Delete</button>
+            </div>
+            <div class="profile-main">
+                <div class="profile-details">
+                    <div class="detail-item">
+                        <label for="firstname">First Name:</label>
+                        <span id="firstname">{{i.First_name}}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label for="lastname">Last Name:</label>
+                        <span id="lastname">{{i.Last_name}}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label for="email">Email:</label>
+                        <span id="email">{{i.Email}}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label for="phone">Phone:</label>
+                        <span id="phone">{{i.Phone}}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label for="address">Address:</label>
+                        <span id="address">{{i.Address}}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label for="dob">Date of Birth:</label>
+                        <span id="dob">{{i.DOB}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

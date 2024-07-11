@@ -1,0 +1,44 @@
+{% extends 'profile.html' %}
+{% block content %}
+<div class="profile-dashboard">
+    <form action="" class="update-container" method='post'>
+        {% csrf_token %}
+        <h3>Update profile</h3>
+        {% for i in user %}
+        <input type="file">
+        <div class="box2">
+            <div class="inputBox">
+                <input required="" type="text" value={{i.First_name}} name="first-name">
+                <span>First name</span>
+            </div>
+            <div class="inputBox">
+                <input required="" type="text" value={{i.Last_name}} name="last_name">
+                <span>Last name</span>
+            </div>
+        </div>
+        <div class="box2">
+            <div class="inputBox">
+                <input required="" type="text" value={{i.Email}} name='email'>
+                <span>Email</span>
+            </div>
+            <div class="inputBox">
+                <input required="" type="text" value={{i.Phone}} name="phone">
+                <span>Phone</span>
+            </div>
+        </div>
+        <div class="box2">
+            <div class="inputBox">
+                <input required="" type="date" class="dob" value={{i.DOB}} name="dob">
+                <span>Date of Birth</span>
+            </div>
+            <div class="inputBox">
+                <input required="" type="text" value={{i.Address}} name="address">
+                <span>Address</span>
+            </div>
+        </div>
+        <input type="submit" value="Update" class="profile-update-btn">
+        {% endfor %}
+    </form>
+</div>
+</div>
+{% endblock %}

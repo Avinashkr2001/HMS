@@ -1,0 +1,28 @@
+{% extends "profile.html" %}
+{% block content %}
+<div class="login-container">
+    <form class="login-form" method="post">
+        {% csrf_token %}
+        <h2>Reset password</h2>
+        <div class="input-group">
+            <label for="password"><i class="fas fa-lock"></i></label>
+            <input type="password" id="password" name="new_password" placeholder="Enter new password" required>
+        </div>
+        <div class="input-group">
+            <label for="password"><i class="fas fa-lock"></i></label>
+            <input type="password" id="password" name="confirm_password" placeholder="Enter confirm Password" required>
+        </div>
+        <span>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
+        </span>
+        <button type="submit">Reset password</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .receipt-container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        .receipt-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .receipt-header h1 {
+            margin: 0;
+            font-size: 32px;
+            color: #333;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .receipt-header img {
+            max-width: 100px;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+        }
+
+        .receipt-details {
+            margin-bottom: 20px;
+        }
+
+        .receipt-details .detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 16px;
+        }
+
+        .receipt-details .detail:last-child {
+            border-bottom: none;
+        }
+
+        .receipt-details .detail label {
+            font-weight: bold;
+            color: #555;
+            flex: 1;
+        }
+
+        .receipt-details .detail span {
+            color: #333;
+            flex: 2;
+            text-align: right;
+        }
+
+        .receipt-footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .receipt-footer p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .print {
+            position: relative;
+            float: right;
+        }
+
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+
+            .receipt-container {
+                box-shadow: none;
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="receipt-container">
+        <button class="print">print</button>
+        <div class="receipt-header">
+            <h1>Receipt</h1>
+        </div>
+
+        {% for i in user %}
+        <div class="receipt-details">
+            <div class="detail">
+                <label>First Name:</label>
+                <span>{{i.First_name}}</span>
+            </div>
+            <div class="detail">
+                <label>Last Name:</label>
+                <span>{{i.Last_name}}</span>
+            </div>
+            <div class="detail">
+                <label>Mobile:</label>
+                <span>{{i.Phone}}</span>
+            </div>
+            <div class="detail">
+                <label>Address:</label>
+                <span>{{i.Address}}</span>
+            </div>
+            <div class="detail">
+                <label>Email:</label>
+                <span>{{i.Email}}</span>
+            </div>
+            <div class="detail">
+                <label>Date of Birth:</label>
+                <span>{{i.DOB}}</span>
+            </div>
+            {% endfor %}
+
+            {% for i in data %}
+            <div class="detail">
+                <label>Blood Group:</label>
+                <span>{{i.Blood_group}}</span>
+            </div>
+            <div class="detail">
+                <label>Disease:</label>
+                <span>{{i.Disease}}</span>
+            </div>
+            <div class="detail">
+                <label>Gender:</label>
+                <span>{{i.Gender}}</span>
+            </div>
+            <div class="detail">
+                <label>Date:</label>
+                <span>{{i.Appointment_date}}</span>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="receipt-footer">
+            <p>Thank you for your visit!</p>
+        </div>
+    </div>
+</body>
+
+</html>

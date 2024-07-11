@@ -1,0 +1,26 @@
+{% extends 'profile.html' %}
+{% block content %}
+<div class="login-container">
+    <form class="login-form" method="post">
+        {% csrf_token %}
+        <h2>Enter OTP</h2>
+        <span>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        </span>
+        <div class="input-group">
+            <input type="text" id="otp" name="otp" placeholder="Please Enter OTP" required>
+        </div>
+        <span id="otp-timer">OTP will expire in: 2:00</span>
+        <span id="resend-otp-btn" style="display: none;">
+            <a href="forgot_pass">Resend otp</a>
+        </span>
+        <button type="submit">Verify OTP</button>
+    </form>
+</div>
+{% endblock %}

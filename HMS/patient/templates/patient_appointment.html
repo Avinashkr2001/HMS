@@ -1,0 +1,24 @@
+{% extends 'profile.html' %}
+{% block content %}
+<div class="login-container">
+    <div class="appointment-form">
+        <h2>Book an Appointment</h2>
+        <form method="post" class="apt-form-inner">
+            {% csrf_token %}
+            <div>
+                {{ form.Blood_group.label_tag }}
+                {{ form.Blood_group }}
+            </div>
+            <div>
+                {{ form.Gender.label_tag }}
+                {{ form.Gender }}
+            </div>
+            <div>
+                {{ form.Disease.label_tag }}
+                {{ form.Disease }}
+            </div>
+            <button type="submit" class="submit-btn">Pay & Download</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

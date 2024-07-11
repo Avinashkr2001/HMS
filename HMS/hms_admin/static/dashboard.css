@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.user-img {
+    width: 50px;
+    border-radius: 50%;
+    border: 1px soilid #eee;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80px;
+    padding: 4rem .8rem;
+    transition: all 0.5s ease;
+    background: #1c2532;
+}
+
+.sidebar.active~.main-content {
+    left: 250px;
+    width: calc(100%-250px);
+}
+
+.sidebar.active {
+    width: 250px;
+}
+
+.sidebar #admin-btn {
+    position: absolute;
+    color: #fff;
+    top: .4rem;
+    left: 50%;
+    font-size: 1.2rem;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.sidebar.active #admin-btn {
+    left: 90%;
+}
+
+.sidebar .top .logo {
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.sidebar .top.logo span {
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+
+.sidebar.active .top .logo {
+    opacity: 1;
+}
+
+.top .logo {
+    font-size: 2rem;
+    margin-right: 5px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+
+}
+
+.user p {
+    color: #fff;
+    opacity: 1;
+    margin-left: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+
+
+
+.sidebar p {
+    opacity: 0;
+}
+
+.sidebar.active p {
+    opacity: 1;
+}
+
+.sidebar ul li {
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    width: 80%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.8rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.sidebar ul li a:hover {
+    background: #fff;
+    color: #12171e;
+}
+
+.sidebar ul li a i {
+    min-width: 50px;
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.sidebar .dashboard-item {
+    opacity: 0;
+}
+
+.sidebar.active .dashboard-item {
+    opacity: 1;
+}
+
+.sidebar ul li .tooltip {
+    position: absolute;
+    left: 100px;
+    top: 10%;
+    transform: translateY(-50%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: .6rem;
+    padding: .4rem 1.2rem;
+    line-height: 1.8rem;
+    z-index: 20;
+    opacity: 0;
+    display: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    z-index: 11;
+}
+
+.sidebar ul li:hover .tooltip {
+    display: block;
+    opacity: 1;
+
+}
+
+
+.sidebar.active ul li .tooltip {
+    display: none;
+}
+
+.main-content {
+    position: relative;
+    min-height: 100vh;
+    top: 0;
+    left: 80px;
+    transition: all 0.5s ease;
+    width: calc(100%-80px);
+}
+
+.main-content .container {
+    height: 100%;
+    width: 100%;
+}
+
+.main-content .patient-datails-outer {
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.patient-datails-inner {
+    width: 80%;
+    display: grid;
+    place-items: center;
+    padding: 30px;
+    margin-right: 70px;
+}
+
+.patient-datails-inner h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead {
+    background-color: #417690;
+}
+
+.table thead tr th {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.35px;
+    color: #eee;
+    opacity: 1;
+    padding: 12px;
+    vertical-align: top;
+    border: 1px solid #dee2ef;
+    font-family: 'popins', sans-serif;
+}
+
+.table tbody tr td {
+    font-size: 16px;
+    letter-spacing: 0.35px;
+    font-weight: normal;
+    color: black;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #147ce485;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #dee2ef;
+}
+
+.edit-delete-btn {
+    gap: 10px;
+}
+
+.edit,
+.trash {
+    text-decoration: none;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 2px;
+}
+
+.edit {
+    background-color: #4CAF50;
+}
+
+.trash {
+    background-color: #FF0000;
+}
+
+.add-patient {
+    padding: 10px 15px;
+    border: none;
+    background: #4CAF50;
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+    text-decoration: none;
+    margin-bottom: 10px;
+    right: 500px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.add-patient:hover {
+    background-color: #3e8e41;
+}
+
+.edit-btn {
+    font-size: 15px;
+    color: #fff;
+}
+
+.delete-btn {
+    font-size: 15px;
+    color: #fff;
+}
+
+.trash {
+    margin-left: 10px;
+}
+
+.inner-container {
+    height: 100vh;
+    width: 100%;
+    background-color: #dee2ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+
+    .table,
+    .table tbody,
+    .table tr,
+    .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        margin-bottom: 15px;
+    }
+
+    .table tbody tr td {
+        text-align: right;
+        padding-right: 15px;
+        position: relative;
+    }
+
+    .table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: left;
+        color: #000;
+    }
+
+    .patient-datails-inner {
+        margin-right: 70px;
+    }
+
+    .add-patient {
+        position: relative;
+        top: 0px;
+        left: 0;
+    }
+}

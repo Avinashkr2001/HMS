@@ -1,0 +1,100 @@
+{% block sidebar %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="top">
+            <div class="logo">
+                <i class='bx bxl-codepen'></i>
+                <span style="color: white;">Dashboard</span>
+            </div>
+            <i class='bx bx-menu' id="admin-btn"></i>
+        </div>
+        <div class="user">
+            <img src="https://img.freepik.com/free-vector/follow-me-social-business-theme-design_24877-50426.jpg?t=st=1718165982~exp=1718169582~hmac=883f39031660d9324b6c88f4986b8da0bf36dc27cd87d13862efce808f447f77&w=740"
+                alt="admin_logo" class="user-img">
+            <div>
+                <p style="font-weight: bold;">Admin</p>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <a href="admin_dashboard">
+                    <i class='bx bxs-grid-alt'></i>
+                    <span class="dashboard-item">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="doctor_details">
+                    <i class='bx bxs-user'></i>
+                    <span class="dashboard-item">Doctors</span>
+                </a>
+                <span class="tooltip">Doctors</span>
+            </li>
+            <li>
+                <a href="patient_details">
+                    <i class='bx bxs-user'></i>
+                    <span class="dashboard-item">Patients</span>
+                </a>
+                <span class="tooltip">Patients</span>
+            </li>
+            <li>
+                <a href="">
+                    <i class='bx bx-home'></i>
+                    <span class="dashboard-item">Departments</span>
+                </a>
+                <span class="tooltip">Departments</span>
+            </li>
+            <li>
+                <a href="appointment">
+                    <i class='bx bx-task'></i>
+                    <span class="dashboard-item">appointments</span>
+                </a>
+                <span class="tooltip">appointments</span>
+            </li>
+            <li>
+                <a href="logout">
+                    <i class='bx bx-log-out'></i>
+                    <span class="dashboard-item">Logout</span>
+                </a>
+                <span class="tooltip">Logout</span>
+            </li>
+        </ul>
+    </div>
+    {% endblock %}
+    {% block content %}
+    <div class="main-content">
+        <div class="container">
+            <h1>data</h1>
+        </div>
+    </div>
+    {% endblock %}
+    {% block footer %}
+
+
+    <script>
+        let btn = document.querySelector('#admin-btn')
+        let sidebar = document.querySelector('.sidebar')
+        btn.onclick = function () {
+            sidebar.classList.toggle('active')
+        }
+    </script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://kit.fontawesome.com/1f30501c1e.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'hms_dashboard.html' %}
+{% block content %}
+<div class="main-content">
+    <div class="container">
+        <div class="inner-container">
+            <form action="" method="post">
+                {% csrf_token %}
+
+                {% for i in details %}
+                doctorid
+                <input type="text" name="doctor-id" readonly value={{i.Doctor_id}}><br>
+                doctor-name
+                <input type="text" name="name" required value={{i.Name}}><br>
+                phone
+                <input type="text" name="phone" required value={{i.Phone}}><br>
+                specility
+                <input type="text" name="specility" required value={{i.Specility}}><br>
+                password
+                <input type="password" name="password" required value={{i.Password}}><br>
+                <input type="submit" value="submit">
+                {% endfor %}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
