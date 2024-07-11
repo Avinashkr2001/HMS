@@ -799,7 +799,6 @@ button:hover {
     font-weight: bold;
 }
 
-/* Style for form input fields */
 .apt-form-inner input[type="text"],
 .apt-form-inner input[type="email"],
 .apt-form-inner select {
