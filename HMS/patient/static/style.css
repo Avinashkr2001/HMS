@@ -251,7 +251,7 @@ button {
     background-color: #006769dd;
     color: #fff;
     border: none;
-    border-radius: px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 20px;
 }
