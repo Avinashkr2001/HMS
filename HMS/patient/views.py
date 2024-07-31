@@ -30,6 +30,7 @@ def patient_profile(request):
     
 def patient_details(request):
     return render(request, "index.html")
+
 def patient_login(request):
     if request.method == 'POST':
         email = request.POST.get('email')
