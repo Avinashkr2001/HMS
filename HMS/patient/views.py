@@ -19,6 +19,7 @@ def patient_dashboard(request):
         return render(request, "patient_dashboard.html",{"user":user})
     else:
         return redirect('patient_login')
+    
 def patient_profile(request):
     email = request.session.get('user_email')
     if email:
