@@ -47,6 +47,7 @@ def patient_login(request):
         else:
             messages.error(request, "Invalid username")
     return render(request, "patient_login.html")
+
 def generate_random_password(first_name):
     characters = string.ascii_letters + string.digits
     random_suffix = ''.join(random.choice(characters) for _ in range(5))
