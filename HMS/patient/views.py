@@ -175,6 +175,7 @@ def profile_update(request,id):
         except Exception as e:
             messages.error(request,'something went wrong')
     return render(request,"profile_update.html",{'user':data})
+
 def patient_form(request):
     email = request.session.get('user_email')
     user=patient_register.objects.filter(Email=email)
