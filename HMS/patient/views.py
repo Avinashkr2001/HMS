@@ -27,6 +27,7 @@ def patient_profile(request):
         return render(request, "profile.html",{"user":user})       
     else:
         return redirect('patient_login')
+    
 def patient_details(request):
     return render(request, "index.html")
 def patient_login(request):
