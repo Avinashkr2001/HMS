@@ -49,7 +49,6 @@ body {
 .sidebar.active #admin-btn {
     left: 90%;
 }
-
 .sidebar .top .logo {
     color: #fff;
     display: flex;
