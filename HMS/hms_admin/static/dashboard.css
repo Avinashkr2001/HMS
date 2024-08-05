@@ -164,6 +164,7 @@ body {
 .sidebar.active ul li .tooltip {
     display: none;
 }
+
 .main-content {
     position: relative;
     min-height: 100vh;
