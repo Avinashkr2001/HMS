@@ -93,6 +93,7 @@ body {
 .sidebar p {
     opacity: 0;
 }
+
 .sidebar.active p {
     opacity: 1;
 }
