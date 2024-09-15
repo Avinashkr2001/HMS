@@ -36,7 +36,7 @@ def patient_login(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         user = patient_register.objects.filter(Email=email)
-             
+         
         if user:
             for i in user:
                 user_password=i.Password
