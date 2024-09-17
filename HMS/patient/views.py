@@ -38,7 +38,7 @@ def patient_login(request):
         user = patient_register.objects.filter(Email=email)
         
         
-         
+     
         if user:
             for i in user:
                 user_password=i.Password
