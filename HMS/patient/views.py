@@ -41,7 +41,7 @@ def patient_login(request):
         
         
         
-    
+
         if user:
             for i in user:
                 user_password=i.Password
